@@ -1,12 +1,12 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	3.16.2
+Version:	3.18.1
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-characters/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	81795fc9da5549e04c9ba175d64de81f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-characters/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	bc3a4b2039cae12327d6d02467f6efcc
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -19,7 +19,7 @@ BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool >= 2:2
-BuildRequires:	libunistring-devel >= 0.9
+BuildRequires:	libunistring-devel >= 0.9.6
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
@@ -30,6 +30,7 @@ Requires:	gjs >= 1.43.3
 Requires:	glib2 >= 1:2.26.0
 Requires:	gnome-icon-theme-symbolic
 Requires:	hicolor-icon-theme
+Requires:	libunistring >= 0.9.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -97,5 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/org.gnome.Characters/gir-1.0
 %{_datadir}/org.gnome.Characters/gir-1.0/Gc-1.0.gir
 %{_desktopdir}/org.gnome.Characters.desktop
-%{_iconsdir}/gnome/scalable/categories/characters-*-symbolic.svg
 %{_iconsdir}/hicolor/*x*/apps/gnome-characters.png
+%{_iconsdir}/hicolor/scalable/categories/characters-*-symbolic.svg
+%{_iconsdir}/hicolor/symbolic/apps/gnome-characters-symbolic.svg
