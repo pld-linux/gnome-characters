@@ -1,23 +1,22 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	3.20.1
+Version:	3.24.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-characters/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	5e1ce3cd54bede98aa0ee9cb9dd7934c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-characters/3.24/%{name}-%{version}.tar.xz
+# Source0-md5:	358a673bf50ad08915fba603975ae0c9
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.12
 BuildRequires:	gdk-pixbuf2-devel >= 2.0
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.43.3
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk+3-devel >= 3.0
-BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libunistring-devel >= 0.9.6
 BuildRequires:	pango-devel
@@ -45,7 +44,6 @@ i wstawiać rzadko używane znaki.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4 -I glm4
 %{__autoconf}
