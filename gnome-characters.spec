@@ -1,18 +1,19 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	3.34.0
+Version:	40.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-characters/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	3c08f3229a9cefb84e02b3c625a31dd2
+Source0:	https://download.gnome.org/sources/gnome-characters/40/%{name}-%{version}.tar.xz
+# Source0-md5:	478110844b83ae37a0f43d9dac61dd28
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk+3-devel >= 3.0
+BuildRequires:	libhandy1-devel >= 1.1
 BuildRequires:	libunistring-devel >= 0.9.6
 BuildRequires:	meson >= 0.46.0
 BuildRequires:	ninja >= 1.5
@@ -21,11 +22,12 @@ BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	gtk-update-icon-cache
 Requires:	gjs >= 1.50
 Requires:	glib2 >= 1:2.26.0
 Requires:	hicolor-icon-theme
+Requires:	libhandy1 >= 1.1
 Requires:	libunistring >= 0.9.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
