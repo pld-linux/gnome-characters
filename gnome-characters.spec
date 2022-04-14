@@ -1,20 +1,20 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	41.0
+Version:	42.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-characters/41/%{name}-%{version}.tar.xz
-# Source0-md5:	9194c656869266067d32bb69cf5174f6
+Source0:	https://download.gnome.org/sources/gnome-characters/42/%{name}-%{version}.tar.xz
+# Source0-md5:	e0caf4f5a04230b49f5a917b96440c2a
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
-BuildRequires:	gtk+3-devel >= 3.0
-BuildRequires:	libhandy1-devel >= 1.1
-BuildRequires:	libunistring-devel >= 0.9.6
+BuildRequires:	gtk4-devel >= 4.6
+BuildRequires:	libadwaita-devel >= 1.0
 BuildRequires:	meson >= 0.46.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel
@@ -26,9 +26,9 @@ Requires(post,postun):	glib2 >= 1:2.26.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	gjs >= 1.50
 Requires:	glib2 >= 1:2.26.0
+Requires:	gtk4 >= 4.6
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 1.1
-Requires:	libunistring >= 0.9.6
+Requires:	libadwaita >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -74,13 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/org.gnome.Characters/girepository-1.0
 %{_libdir}/org.gnome.Characters/girepository-1.0/Gc-1.0.typelib
 %{_datadir}/dbus-1/services/org.gnome.Characters.service
-%{_datadir}/dbus-1/services/org.gnome.Characters.BackgroundService.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Characters.gschema.xml
 %{_datadir}/gnome-shell/search-providers/org.gnome.Characters.search-provider.ini
 %{_datadir}/metainfo/org.gnome.Characters.appdata.xml
 %dir %{_datadir}/org.gnome.Characters
 %attr(755,root,root) %{_datadir}/org.gnome.Characters/org.gnome.Characters
-%attr(755,root,root) %{_datadir}/org.gnome.Characters/org.gnome.Characters.BackgroundService
 %{_datadir}/org.gnome.Characters/org.gnome.Characters.*.gresource
 %dir %{_datadir}/org.gnome.Characters/gir-1.0
 %{_datadir}/org.gnome.Characters/gir-1.0/Gc-1.0.gir
