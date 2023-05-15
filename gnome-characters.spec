@@ -2,20 +2,20 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	42.0
+Version:	43.1
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-characters/42/%{name}-%{version}.tar.xz
-# Source0-md5:	e0caf4f5a04230b49f5a917b96440c2a
+Source0:	https://download.gnome.org/sources/gnome-characters/43/%{name}-%{version}.tar.xz
+# Source0-md5:	626b6607ed5a7d6d1177702721930647
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk4-devel >= 4.6
-BuildRequires:	libadwaita-devel >= 1.0
-BuildRequires:	meson >= 0.46.0
+BuildRequires:	libadwaita-devel >= 1.2
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 1:0.22
@@ -28,7 +28,7 @@ Requires:	gjs >= 1.50
 Requires:	glib2 >= 1:2.26.0
 Requires:	gtk4 >= 4.6
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.0
+Requires:	libadwaita >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
