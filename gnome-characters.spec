@@ -2,12 +2,12 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	43.1
+Version:	44.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-characters/43/%{name}-%{version}.tar.xz
-# Source0-md5:	626b6607ed5a7d6d1177702721930647
+Source0:	https://download.gnome.org/sources/gnome-characters/44/%{name}-%{version}.tar.xz
+# Source0-md5:	0a888f50841db74bb285da20e7d893b2
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
@@ -15,7 +15,7 @@ BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk4-devel >= 4.6
 BuildRequires:	libadwaita-devel >= 1.2
-BuildRequires:	meson >= 0.59.0
+BuildRequires:	meson >= 0.61.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 1:0.22
@@ -51,6 +51,9 @@ i wstawiać rzadko używane znaki.
 rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
+
+# not supported by glibc (as of 2.37)
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang org.gnome.Characters
 
