@@ -2,12 +2,12 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	44.0
+Version:	45.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-characters/44/%{name}-%{version}.tar.xz
-# Source0-md5:	0a888f50841db74bb285da20e7d893b2
+Source0:	https://download.gnome.org/sources/gnome-characters/45/%{name}-%{version}.tar.xz
+# Source0-md5:	467a2fa0b630401ff4c0b6b2c839d3b5
 URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
