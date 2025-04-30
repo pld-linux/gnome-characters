@@ -2,16 +2,16 @@
 Summary:	Character Map application for GNOME
 Summary(pl.UTF-8):	Mapa znaków dla GNOME
 Name:		gnome-characters
-Version:	47.0
+Version:	48.0
 Release:	1
 License:	GPL v2+ with BSD parts
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-characters/47/%{name}-%{version}.tar.xz
-# Source0-md5:	29a770d8716f8e22b48c27ec840ea79b
-URL:		https://wiki.gnome.org/Design/Apps/CharacterMap
+Source0:	https://download.gnome.org/sources/gnome-characters/48/%{name}-%{version}.tar.xz
+# Source0-md5:	3d265093a8100ca26195a0d2ce570351
+URL:		https://apps.gnome.org/Characters/
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gjs-devel >= 1.50
-BuildRequires:	glib2-devel >= 1:2.26.0
+BuildRequires:	glib2-devel >= 1:2.83.0
 BuildRequires:	gobject-introspection-devel >= 1.36.0
 BuildRequires:	gtk4-devel >= 4.6
 BuildRequires:	libadwaita-devel >= 1.5
@@ -19,13 +19,13 @@ BuildRequires:	meson >= 0.61.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.83.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	gjs >= 1.50
-Requires:	glib2 >= 1:2.26.0
+Requires:	glib2 >= 1:2.83.0
 Requires:	gtk4 >= 4.6
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1.5
@@ -43,14 +43,14 @@ i wstawiać rzadko używane znaki.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 # not supported by glibc (as of 2.37)
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
